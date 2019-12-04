@@ -42,7 +42,7 @@ if ($_SESSION["Role"] == "Cust") {
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 bg-light mt-5 px-0">
-                <h3 class="text-center text-dark p-3"> Edit Customer</h3>
+                <h3 class="text-center text-dark p-3"> Edit Teller</h3>
                 <form action="C_edit_process.php" method="POST" class="p-4">
                     <div class="form-group">
                         <label for=""> Id</label>

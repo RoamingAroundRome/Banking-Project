@@ -1,15 +1,7 @@
 <?php
     session_start();
-    if(isset($_SESSION["Role"]))
-    {
-
-    }
-    else
-    {
-        header('Location: index.php');
-    }
     include"connection.php";
-    $query = "SELECT * FROM ManagerTellerView ORDER BY branch_id Desc";
+    $query = "SELECT * FROM Teller_list";
     $result = mysqli_query($link,$query);
 
 ?>
@@ -87,8 +79,10 @@
                         <td><?php echo $row['fname'];?></td>
                         <td><?php echo $row['lname'];?></td>
                         <td style="align-center">
-                            < <a class="btn btn-primary" role="button" href="T_edit.php?id=<?php echo $fname; ?>">Edit </a>
-                                <a class="btn btn-danger" role="button" href="T_delete.php?id=<?php echo $fname; ?>"> Delete </a>
+                            <a class="btn btn-primary" role="button" href="T_edit.php?id=<?php echo $fname; ?>">Edit
+                            </a>
+                            <a class="btn btn-danger" role="button" href="T_delete.php?id=<?php echo $fname; ?>"> Delete
+                            </a>
                         </td>
                     </tr>
                     <?php endwhile;?>

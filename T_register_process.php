@@ -18,8 +18,7 @@
         ;
 
         if(mysqli_query($link, $query)){
-            $message = 'Record Successful <a href="/Bank_App/">Go back</a>';
-            echo $message; 
+            header('location:view_teller.php');
         } 
                 
     }

@@ -44,61 +44,7 @@ require ("connection.php");
                 </li>
             </ul>
     </nav>
-
-    <div class="container justify-content-center bg-transparent">
-        <div class="row bg-secondary">
-            <table class="table bg-secondary table-borderless">
-                <tr class="bg-transparent">
-                    <th class="text-light text-" style="font-size:20px"> All Customers</th>
-                    <th> </th>
-                    <th> </th>
-                    <th> <a name="btnLogout" class="btn btn-primary" href="C_register.php" role="button">
-                            Add New Customer </a>
-                    </th>
-                </tr>
-            </table>
-        </div>
-        <div class="row">
-            <table class="table  bg-white table-bordered ">
-                <thead>
-                    <tr>
-                        <th>Branch Id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Balance</th>
-                        <th colspan="3">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                    $query = "SELECT * FROM Customer";
-                    $result = mysqli_query($link,$query);
-                    while ($row = mysqli_fetch_assoc($result)): ?>
-                    <tr>
-                        <?php $fname = $row['fname'];?>
-                        <td><?php echo $row['branch_id'];?></td>
-                        <td><?php echo $row['fname'];?></td>
-                        <td><?php echo $row['lname'];?></td>
-                        <td><?php echo $row['balance'];?></td>
-                        <td>
-
-                            <a class="btn btn-success" role="button"
-                                href="transaction.php?trans=<?php echo $fname; ?>">Transact</a>
-                            <a class="btn btn-primary" role="button" href="C_edit.php?id=<?php echo $fname; ?>">Edit
-                            </a>
-                            <a class="btn btn-danger" role="button" href="C_delete.php?id=<?php echo $fname; ?>"> Delete
-                            </a>
-                        </td>
-                    </tr>
-                    <?php endwhile;?>
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

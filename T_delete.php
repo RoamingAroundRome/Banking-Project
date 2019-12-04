@@ -9,7 +9,7 @@
         if (mysqli_query($link,$query))  
         {
             
-                    header('Location: view_teller.php');
+                 header('Location: view_teller.php');
                 
         }
         
