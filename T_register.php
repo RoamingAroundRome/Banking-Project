@@ -1,11 +1,7 @@
 <?php
-include "C_register_process.php";
-if ($_SESSION["role"] == "Cust") {
-    header('Location: U_user.php');
-} elseif ($_SESSION["role"] == "Teller") {
-    header('Location: U_teller.php');
-} else { }
-
+require_once "connection.php";
+include "T_register_process.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +16,7 @@ if ($_SESSION["role"] == "Cust") {
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 bg-light mt-5 px-0">
-                <h3 class="text-center text-dark p-3"> Register New User</h3>
+                <h3 class="text-center text-dark p-3"> Register New Teller</h3>
                 <form action="T_register_process.php" method="POST" class="p-4">
                     <div class="form-group">
                         <label for=""> First Name</label>

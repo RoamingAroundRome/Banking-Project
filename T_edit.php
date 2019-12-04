@@ -5,29 +5,28 @@ include "C_edit_process.php";
 
 if ($_SESSION["role"] == "Cust") {
     header('Location: U_user.php');
-} else 
-{
-    if(isset($_GET['id']))
-    {
+} else {
+    if (isset($_GET['id'])) {
         $fname =  $_GET['id'];
-        $query4 = "SELECT * FROM Customer WHERE fname = '$fname'";
-        $result4 = mysqli_query($link,$query4);
-        
+        $query4 = " SELECT * FROM Employee WHERE fname = '$fname'";
+        $result4 = mysqli_query($link, $query4);
+
+
         if($row1 = mysqli_fetch_assoc($result4)){
 
             $_SESSION['id'] = $row1['id'];
             $_SESSION['fname'] = $row1['fname'];
             $_SESSION['lname'] = $row1['lname'];
-            $_SESSION['username'] = $row1['Username'];
-            $_SESSION['password'] = $row1['Password'];
+            $_SESSION['username'] = $row1['username'];
+            $_SESSION['password'] = $row1['password'];
             $_SESSION['email'] = $row1['email'];
-            $_SESSION['balance'] = $row1['balance'];
             $_SESSION['expiry'] = $row1['expiry_date'];
             $_SESSION['branch_id'] = $row1['branch_id'];
         }
+    } else {
+        echo 'Eroor';
     }
-
- }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,23 +44,18 @@ if ($_SESSION["role"] == "Cust") {
                 <h3 class="text-center text-dark p-3"> Edit Teller</h3>
                 <form action="C_edit_process.php" method="POST" class="p-4">
                     <div class="form-group">
-                        <label for=""> Id</label>
-                        <input type="text" name="id" class="form-control" placeholder= "Old:<?php echo $_SESSION['id'] ;?>" aria-describedby="helpId">
-                        </input>    
-                    </div>
-                    <div class="form-group">
                         <label for=""> First Name</label>
-                        <input type="text" name="fname" class="form-control" placeholder= "Old:<?php echo $_SESSION['fname'] ;?>" aria-describedby="helpId">
+                        <input type="text" name="fname" class="form-control" placeholder="Old:<?php echo $row1['fname']; ?>" aria-describedby="helpId">
 
                     </div>
                     <div class="form-group">
                         <label for=""> Last Name</label>
-                        <input type="text" name="lname" class="form-control" placeholder="Old:<?php echo $_SESSION['lname'] ;?>" aria-describedby="helpId">
+                        <input type="text" name="lname" class="form-control" placeholder="Old:<?php echo $row1['lname']; ?>" aria-describedby="helpId">
 
                     </div>
                     <div class="form-group">
                         <label for=""> Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Old:<?php echo $_SESSION['username'] ;?>" aria-describedby="helpId">
+                        <input type="text" name="username" class="form-control" placeholder="Old:<?php echo $row1['username']; ?>" aria-describedby="helpId">
 
                     </div>
                     <div class="form-group">
@@ -71,7 +65,7 @@ if ($_SESSION["role"] == "Cust") {
                     </div>
                     <div class="form-group">
                         <label for=""> Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Old:<?php echo $_SESSION['email'] ;?>" aria-describedby="helpId">
+                        <input type="email" name="email" class="form-control" placeholder="Old:<?php echo $row1['email']; ?>" aria-describedby="helpId">
 
                     </div>
                     <div class="form-group">

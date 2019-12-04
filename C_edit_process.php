@@ -1,34 +1,25 @@
 <?php
-   
-    include"connection.php";
-    
-    if(isset($_POST['Edit_Cust']))
-    {
-        
-        $query = "UPDATE Customer SET 
-                fname = '".$_POST['fname']."',
-                lname = '".$_POST['lname']."',
-                Username ='".$_POST['username']."',
-                Password= '".$_POST['password']."',
-                email = '".$_POST['email']."',
-                expiry_date = '".$_POST['expiry']."'
-                 WHERE id = '".$_POST['id']."' ";
-    
-        if (mysqli_query($link,$query))  
-        {
-            if($_SESSION['role'] != "Manager")
-            {
-                header('Location: view_customer_teller.php');
-            }
-            else{
-                header('Location: view_customer.php');
-            }
+session_start();
+require_once "connection.php";
+
+if (isset($_POST["Edit_Cust"])) {
+
+    $query = "UPDATE Customer SET 
+                fname = '" . $_POST['fname'] . "',
+                lname = '" . $_POST['lname'] . "',
+                username ='" . $_POST['username'] . "',
+                password= '" . $_POST['password'] . "',
+                email = '" . $_POST['email'] . "',
+                date_expire = '" . $_POST['expiry'] . "'
+                 WHERE account = '" . $_SESSION['account'] . "' ";
+
+    if (mysqli_query($link, $query)) {
+        if ($_SESSION['role'] != "Manager") {
+            header('Location: view_customer_teller.php');
+        } else {
+            header('Location: view_customer.php');
         }
-    
-        else
-        {
-            echo 'Eroor';
-        }
+    } else {
+        echo $_SESSION['role'];
     }
-      
-?>
+}

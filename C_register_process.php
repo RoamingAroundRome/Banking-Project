@@ -24,6 +24,7 @@ if (isset($_POST["Reg_Cust"])) {
             Header('Location: view_customer.php');
         }
     } else {
-        echo 'Error';
+        echo $_SESSION['role'];
+        
     }
 }

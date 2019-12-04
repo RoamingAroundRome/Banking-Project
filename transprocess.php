@@ -10,7 +10,15 @@
         {
             $query = "UPDATE Customer SET balance = balance - $amount where id = '$id'";
             $result = mysqli_query($link,$query);
-            header('Location: logout.php?logout');
+            if ($_SESSION['role'] == "Teller") {
+                Header('Location: view_customer_teller.php');
+            } elseif($_SESSION['role'] == "Teller") {
+                Header('Location: view_customer.php');
+            }
+            else 
+            {
+                Header('Location: U_user.php');
+            }
         }
         else
         {

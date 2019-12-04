@@ -1,27 +1,7 @@
 <?php
     session_start();
     require_once "connection.php";
-    if(isset($_SESSION["role"]))
-    {
-        if($_SESSION["role"] == "Teller")
-        {
-            header('Location: U_teller.php');
-        }
-        elseif($_SESSION["role"] == "Manager")
-        {
-            header('Location: U_admin.php');
-        }
-        else
-        {
-            $id = $_SESSION["id"];
-        }
-
-    }
-    else
-    {
-        header('Location: index.php');
-    } 
-        $query = "SELECT * FROM Customer WHERE id = $id ";
+        $query = "SELECT * FROM Customer WHERE id = '".$_SESSION['id']."'";
         $result = mysqli_query($link,$query);
         $result_cust = mysqli_fetch_array($result)
 ?>

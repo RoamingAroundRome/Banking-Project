@@ -44,7 +44,27 @@ require ("connection.php");
                 </li>
             </ul>
     </nav>
-    
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-lg-5 bg-light mt-5 px-0">
+                <h1 class="text-center text-dark p-2"> Welcome <?php echo $_SESSION['role'].' '.$_SESSION['fname'].
+            '<br>';?></h1>
+            </div>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-lg-5 bg-light mt-0 px-1">
+                <h5 class="text-center"> Please Select An Action:</h5>
+                <div class="text-center p-3">
+                    <a class="btn btn-primary btn-block p-3" href="view_customer.php">View Customers</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="btn btn-primary btn-block p-3" href="view_teller.php">View Teller</a>
+                    <div class="dropdown-divider"></div>
+                    <a class=" btn btn-danger btn-block p-3" name="btnLogout" href="logout.php?logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

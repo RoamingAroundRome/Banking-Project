@@ -3,8 +3,8 @@
     session_start();
     require_once "connection.php";
     include "transprocess.php";
-    if(isset($_GET['trans'])){
-        $fname = $_GET['trans'];
+    if(isset($_GET['forne'])){
+        $fname = $_GET['forne'];
         $query = "SELECT * FROM Customer WHERE fname = '$fname'";
     
         $result = mysqli_query($link,$query);

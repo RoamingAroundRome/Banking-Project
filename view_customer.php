@@ -49,12 +49,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="user">
-        <?php
-            echo $_SESSION['fname'].' '.$_SESSION['role'].
-            '<br>';
-        ?>
-        </div>
+        
         <div class="container justify-content-center bg-transparent">
             <div class="row bg-secondary">
                 <table class="table bg-secondary table-borderless">
@@ -89,7 +84,7 @@
                             <td><?php echo $row['balance'];?></td>
                             <td>
                                 
-                                <a class="btn btn-success" role="button" href="transaction.php?trans=<?php echo $fname; ?>">Transact</a>
+                                <a class="btn btn-success" role="button" href="transaction.php?forne=<?php echo $fname; ?>">Transact</a>
                                 <a class="btn btn-primary" role="button" href="C_edit.php?id=<?php echo $fname; ?>">Edit </a>
                                 <a class="btn btn-danger" role="button" href="C_delete.php?id=<?php echo $fname; ?>"> Delete </a>
                             </td>
