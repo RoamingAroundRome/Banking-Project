@@ -16,7 +16,7 @@
     
         if (mysqli_query($link,$query))  
         {
-            if($_SESSION['Role'] != "Manager")
+            if($_SESSION['role'] != "Manager")
             {
                 header('Location: view_customer_teller.php');
             }

@@ -1,8 +1,8 @@
 <?php
 include "C_register_process.php";
-if ($_SESSION["Role"] == "Cust") {
+if ($_SESSION["role"] == "Cust") {
     header('Location: U_user.php');
-} elseif ($_SESSION["Role"] == "Teller") {
+} elseif ($_SESSION["role"] == "Teller") {
     header('Location: U_teller.php');
 } else { }
 

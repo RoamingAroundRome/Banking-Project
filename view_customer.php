@@ -49,7 +49,12 @@
                 </ul>
             </div>
         </nav>
-
+        <div class="user">
+        <?php
+            echo $_SESSION['fname'].' '.$_SESSION['role'].
+            '<br>';
+        ?>
+        </div>
         <div class="container justify-content-center bg-transparent">
             <div class="row bg-secondary">
                 <table class="table bg-secondary table-borderless">

@@ -3,15 +3,6 @@
 require_once "connection.php";
 include "C_register_process.php";
 session_start();
-if ($_SESSION["Role"] == "Cust") 
-{
-    header('Location: U_user.php');
-}
-else
-{ 
-
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,46 +15,54 @@ else
     </head>
 
     <body class="bg-secondary">
+    
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 bg-light mt-5 px-0">
                     <h3 class="text-center text-dark p-3"> Register New Customer</h3>
                     <form action="C_register_process.php" method="POST" class="p-4">
+
                         <div class="form-group">
                             <label for=""> First Name</label>
                             <input type="text" name="fname" class="form-control" placeholder="Enter Firstname"
                                 aria-describedby="helpId">
 
                         </div>
+
                         <div class="form-group">
                             <label for=""> Last Name</label>
                             <input type="text" name="lname" class="form-control" placeholder="Enter Lastname"
                                 aria-describedby="helpId">
 
                         </div>
+
                         <div class="form-group">
                             <label for=""> Username</label>
                             <input type="text" name="username" class="form-control" placeholder="Enter Username"
                                 aria-describedby="helpId">
 
                         </div>
+
                         <div class="form-group">
                             <label for="">Password</label>
                             <input type="password" name="password" class="form-control" placeholder="Enter Password"
                                 aria-describedby="helpId" minlength="8">
 
                         </div>
+
                         <div class="form-group">
                             <label for=""> Email</label>
                             <input type="email" name="email" class="form-control" placeholder="Enter Email"
                                 aria-describedby="helpId">
 
                         </div>
+
                         <div class="form-group">
                             <label for="">Branch_ID</label>
                             <input type="number" name="branch_id" class="form-control" placeholder="Enter Branch_Id"
                                 aria-describedby="helpId">
                         </div>
+
                         <div class="form-group">
                             <label for="">Account</label>
                             <input type="text" name="account" class="form-control" placeholder="Enter Account"

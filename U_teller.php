@@ -2,10 +2,10 @@
 
 session_start();
 
-if (isset($_SESSION["Role"])) {
-    if ($_SESSION["Role"] == "Manager") {
+if (isset($_SESSION["role"])) {
+    if ($_SESSION["role"] == "Manager") {
         header('Location: U_admin.php');
-    } elseif ($_SESSION["Role"] == "Cust") {
+    } elseif ($_SESSION["role"] == "Cust") {
         header('Location: U_user.php');
     }
 } else {

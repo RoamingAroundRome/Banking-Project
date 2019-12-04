@@ -1,13 +1,13 @@
 <?php
     session_start();
     require_once "connection.php";
-    if(isset($_SESSION["Role"]))
+    if(isset($_SESSION["role"]))
     {
-        if($_SESSION["Role"] == "Teller")
+        if($_SESSION["role"] == "Teller")
         {
             header('Location: U_teller.php');
         }
-        elseif($_SESSION["Role"] == "Manager")
+        elseif($_SESSION["role"] == "Manager")
         {
             header('Location: U_admin.php');
         }

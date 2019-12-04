@@ -4,7 +4,7 @@ session_start();
 require_once "connection.php";
 include "C_edit_process.php";
 
-if ($_SESSION["Role"] == "Cust") {
+if ($_SESSION['role'] == "Cust") {
     header('Location: U_user.php');
 } else 
 {

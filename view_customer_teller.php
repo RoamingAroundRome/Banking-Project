@@ -1,14 +1,6 @@
 <?php
     session_start();
     include"connection.php";
-    if(isset($_SESSION["Role"]) == "Teller")
-    {
-
-    }
-    else
-    {
-        header('Location: index.php');
-    }
     
     $query = "SELECT * FROM Teller_view  ORDER BY branch_id Desc";
     $result = mysqli_query($link,$query);

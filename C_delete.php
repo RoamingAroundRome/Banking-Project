@@ -8,12 +8,12 @@
     
         if (mysqli_query($link,$query))  
         {
-            if (isset($_SESSION["Role"])) 
+            if (isset($_SESSION["role"])) 
             {
-                if ($_SESSION["Role"] == "Teller") 
+                if ($_SESSION["role"] == "Teller") 
                 {
                     header('Location: view_customer _teller.php');
-                } elseif ($_SESSION["Role"] == "Manager") 
+                } elseif ($_SESSION["role"] == "Manager") 
                 {
                     header('Location: view_customer.php');
                 }

@@ -6,7 +6,7 @@
     {
         
         $query = "INSERT INTO Employee 
-                (fname, lname, Username, Password, email, Role, branch_id) 
+                (fname, lname, Username, Password, email, role, branch_id) 
                 VALUES ('".$_POST['fname']."', 
                         '".$_POST['lname']."', 
                         '".$_POST['username']."', 
